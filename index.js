@@ -4,11 +4,15 @@ const start = require('./start.js');
 
 start.run();
 
-const webhookClients = [
-    new WebhookClient({ url: config.url[0].url1 }),
-    new WebhookClient({ url: config.url[0].url2 }),
-    new WebhookClient({ url: config.url[0].url3 })
-  ];
+const webhookClients = [];
+
+for (let i = 1; i <= config.url[0].urlNum; i++) {
+  const url = config.url[0][`url${i}`];
+  if (url) {
+    webhookClients.push(new WebhookClient({ url }));
+  }
+}
+
 
 const messages = [{        
         content: 'some-content',        
@@ -21,7 +25,7 @@ const messages = [{
         avatarURL: 'https://i.imgur.com/AfFp7pu.png'
     },
     {
-        content: 'eeee',
+        content: 'message here',
         username: config.profile[0].username,
         avatarURL: 'https://i.imgur.com/AfFp7pu.png'
     }

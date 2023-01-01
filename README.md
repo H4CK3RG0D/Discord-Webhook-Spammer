@@ -17,16 +17,16 @@ This is a simple Discord.js webhook spammer. It can be used to spam any channel 
 ### Before running the code in this repository, you need to have the following dependencies installed[<sup>1</sup>](#footnote1):
 ## **`discord.js and node.js`**
 
-## <br>To install node.js, go to https://nodejs.org/en/download/ and download the latest version.<br>
+### <br>To install node.js, go to https://nodejs.org/en/download/ and download the latest version.<br>
 
-## <br>To install discord.js, run the following command in your terminal in the directory of the repository:
+### <br>To install discord.js, run the following command in your terminal in the directory of the repository:
 ### This will install the latest version of discord.js. And make sure you have node.js installed first.
 ```cmd
 $ npm install discord.js
 ```
 
 # Running the code
-## Running the code is very simple. You can either **click the `run.bat`** file or run the follwing code in the terminal:
+### Running the code is very simple. You can either **click the `run.bat`** file or run the follwing code in the terminal:
 ```cmd
 $ node --experimental-modules index.js
 ```
@@ -41,10 +41,10 @@ There is no need to install any other dependencies. The code is ready to run. Yo
 ### If you already have created a webhook, the webhooks tab will look like this; you will need to click the `View Webhooks` button.<br>
 ![fig2](https://discordjs.guide/assets/creating-webhooks-2.24d92370.png)<br>
 
-### Once you are there, click on the `Create Webhook` / `New Webhook` button; this will create a webhook. From here, you can edit the channel, the name, and the avatar. Copy the link, the first part is the id, and the second is the token.
+### To create a new webhook, navigate to the desired channel and click the `Create Webhook` or `New Webhook` button. This will open a new window where you can customize the channel, name, and avatar of the webhook. Once you have made your desired changes, copy the provided link, which consists of both the webhook's unique ID and token.
 ![fig3](https://discordjs.guide/assets/creating-webhooks-3.1fddb27b.png)
 
-## Paste the URL in the `index.js` file in the repository.<br>
+## Paste the URL[<sup>2</sup>](#footnote2) in the `config.json` file in the repository.<br>
 ### The URL should look like this: `https://discord.com/api/webhooks/123/xyz`<br>
 
 # <br>Customization
@@ -66,25 +66,16 @@ There is no need to install any other dependencies. The code is ready to run. Yo
 }
 ```
 
-### <br>To add more webhooks, add the following lines webhookClients array in the `index.js` file:
-```js
-const webhookClients = [
-    new WebhookClient({ url: config.url[0].urlNum })
-  ];
-```
-### <br>The url number is the number of the webhook in the `config.json` file which should looks like this:
+### <br>The `urlNum` is the number of the webhook in the `config.json` file which should looks like this, The number should be the same as the number of webhooks you want to use. If the urlNum is less than the number of webhooks you want to use, the code will only use the number of webhooks you set in the `urlNum`.<br>
 ```json
 {
     "url": [{
+        "urlNum": 2, // number of webhooks you want to use. MUST BE A NUMBER.
         "url1": "https://discord.com/api/webhooks/123/xyz",
         "url2": "https://discord.com/api/webhooks/234/xyz",
         "url3": "" // this can be left blank if you don't want to use more than 2 webhooks.
     }]
 }
-```
-### <br>So if you want to add the thrid webhook, the url number should be `url3` and the code should look like this:
-```js
-new WebhookClient({ url: config.url[0].url3 })
 ```
 
 ### <br>If you added more webhooks to run the code with them, add the following lines after the each webhookClient(don't forget to add a comma after each line):
@@ -123,7 +114,9 @@ new WebhookClient({ url: config.url[0].url3 })
 
 ---
 ## <br>Footnotes:<br>
-### <a name="footnote1">1</a>: You must install them in the same directory as the `index.js` file. If you are using a code editor, make sure you have installed the discord.js extension. If you are using the terminal, make sure you have installed the discord.js package. You can find the link to the discord.js documentation [here](https://discord.js.org/#/docs/main/stable/general/welcome).<br>
+<a name="footnote1">1</a>: You must install them in the same directory as the `index.js` file. If you are using a code editor, make sure you have installed the discord.js extension. If you are using the terminal, make sure you have installed the discord.js package. You can find the link to the discord.js documentation [here](https://discord.js.org/#/docs/main/stable/general/welcome).<br>
+
+<a name="footnote2">2</a>: The URL should look like this: `https://discord.com/api/webhooks/123/xyz`<br>
 
 ---
 
