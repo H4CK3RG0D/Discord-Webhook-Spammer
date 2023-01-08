@@ -1,5 +1,5 @@
 # Discord.js Webhook Spammer
-This is a simple Discord.js webhook spammer. It can be used to spam any channel with any message. This can also be used to spam a channel with multiple webhooks. The webhooks can be customized to your liking. You can also add more webhooks to the code. You need to have node.js and discord.js installed to run the code which you can [find below](#Installation).<br>
+This is a simple Discord.js webhook spammer. It can be used to spam any channel with any message. This can also be used to spam a channel with multiple webhooks. The webhooks can be customized to your liking. The code can run different webhooks from different server. You can also add more webhooks to the code. You need to have node.js and discord.js installed to run the code which you can [find below](#Installation).<br>
 
 ## **\**This code is for educational purposes only. I am not responsible for any damage caused by this code.**\**
 
@@ -78,6 +78,21 @@ Paste the URL[<sup>2</sup>](#footnote2) in the `config.json` file in the reposit
     }]
 }
 ```
+### If added more that 5 webhooks, you need to add the following code to the checkWebhook() function in the `check.js` file[<sup>3</sup>](#footnote3):
+```js
+    const url5 = config.url[0].url5;
+    const url6 = config.url[0].url6; // if added more than 6 webhooks, add the following line. vice versa.
+```
+### As well as the follwing code in config.json:
+```json
+{
+    "url": [{
+        "urlNum": 6, // number of webhooks you want to use. MUST BE A NUMBER.
+        // ...
+        "url6": "https://discord.com/api/webhooks/678/xyz"
+    }]
+}
+```
 
 ### <br>If you added more webhooks to run the code with them, add the following lines after the each webhookClient(don't forget to add a comma after each line):
 ```js
@@ -90,7 +105,7 @@ Paste the URL[<sup>2</sup>](#footnote2) in the `config.json` file in the reposit
 
 
 
-### <br>You can also set the username and avatarURL in the `config.json` file. If you want to set the username and avatarURL in the `config.json` file, you can remove the `username` and `avatarURL` from the `spammer()` function in the `index.js` file. The code should look like this:
+### <br>You can also set the username and avatarURL in the `config.json` file. If you want to set the username and avatarURL in the `config.json` file, you can remove the `username` and `avatarURL` from the `spammer()` function in the `message.js` file. The code should look like this:
 ```js
     {
         content: 'eeee',
@@ -98,7 +113,7 @@ Paste the URL[<sup>2</sup>](#footnote2) in the `config.json` file in the reposit
         avatarURL: config.profile[0].avatarURL
     }
 ```
-### <br>You can also change the amount of messages sent in the for loop inside `spammer()` function in the `index.js` file. The code should look like this:
+### <br>You can also change the amount of messages sent in the for loop inside `spammer()` function in the `message.js` file. The code should look like this:
 ```js
     for (let i = 0; i < 100; i++) {
         // code here
@@ -106,6 +121,11 @@ Paste the URL[<sup>2</sup>](#footnote2) in the `config.json` file in the reposit
 ```
 ### For this instance, the code will send 100 messages. You can change the number to whatever you want. The number is the amount of messages sent.
 
+# <br>Logging each webhook's status
+After each run, the code will log the status of each webhook in the `log.txt` file. The log file will be created (in a form of json) in the `log` folder located in the root directory. The log includes the following information:
+- The webhook's URLs
+- The webhook's message
+- Time and date of the run
 
 
 # <br>Errors and Warnings
@@ -118,6 +138,8 @@ Paste the URL[<sup>2</sup>](#footnote2) in the `config.json` file in the reposit
 <a name="footnote1">1</a>: You must install them in the same directory as the `index.js` file. If you are using a code editor, make sure you have installed the discord.js extension. If you are using the terminal, make sure you have installed the discord.js package. You can find the link to the discord.js documentation [here](https://discord.js.org/#/docs/main/stable/general/welcome).<br>
 
 <a name="footnote2">2</a>: The URL should look like this: `https://discord.com/api/webhooks/123/xyz`<br>
+
+<a name="footnote3">3</a>: These files are located in the `events` folder in the root directory.<br>
 
 ---
 

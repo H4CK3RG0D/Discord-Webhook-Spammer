@@ -1,7 +1,10 @@
-const config =  require('./config.json');
+const config =  require('../config.json');
 const check = require('./check.js');
 
-
+module.exports.info = {
+	"name":"start"
+}
+  
 module.exports.run = () => {
 function start() {
         console.log("starting...");
@@ -10,11 +13,8 @@ function start() {
             check.run();
         }, 2000)
         setTimeout(() => {
-            console.log("---------");
-        }, 3000);
-        setTimeout(() => {
             console.log("Message sent!");
-        }, 1000);
+        }, 5000);
 
     } start()
 }
