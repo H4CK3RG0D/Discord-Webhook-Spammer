@@ -40,7 +40,7 @@ module.exports.run = () => {
         }
 
         const spammer = async () => {
-            for (let i = 0; i < 1; i++) {
+            for (let i = 0; i < 5; i++) {
                 for (let j = 0; j < webhookClients.length; j++) {
                     await webhookClients[j].send(messages[j]);
                 }
