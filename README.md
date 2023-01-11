@@ -141,7 +141,8 @@ After each run, the code will log the status of each webhook in the `log.txt` fi
 
 <a name="footnote3">3</a>: These files are located in the `events` folder in the root directory.<br>
 
-[<sup>4</sup>](#footnote4): The owner can check who creates the webhooks in the logs. Please note that the owner can remove the webhooks, if you abuse this program.
+<a name="footnote4">4</a>: The owner can check who creates the webhooks in the logs. Please note that the owner can remove the webhooks, if you abuse this program.
+
 ---
 
 # <br> Info
