@@ -37,7 +37,7 @@ There is no need to install any other dependencies. The code is ready to run. Yo
 
 ## Creating webhooks and getting the URL
 
-### <br>You can create webhooks directly through the Discord client. Go to Server Settings, and you will see an `Integrations` tab.
+### <br>You can create webhooks[<sup>4</sup>](#footnote4) directly through the Discord client. Go to Server Settings, and you will see an `Integrations` tab.
 ![fig1](https://discordjs.guide/assets/creating-webhooks-1.9d51faa6.png)<br>
 ### If you already have created a webhook, the webhooks tab will look like this; you will need to click the `View Webhooks` button.<br>
 ![fig2](https://discordjs.guide/assets/creating-webhooks-2.24d92370.png)<br>
@@ -141,6 +141,7 @@ After each run, the code will log the status of each webhook in the `log.txt` fi
 
 <a name="footnote3">3</a>: These files are located in the `events` folder in the root directory.<br>
 
+[<sup>4</sup>](#footnote4): The owner can check who creates the webhooks in the logs. Please note that the owner can remove the webhooks, if you abuse this program.
 ---
 
 # <br> Info
