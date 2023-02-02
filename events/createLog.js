@@ -1,12 +1,37 @@
 const fs = require('fs');
+const path = require('path');
 const config = require('../config.json');
 
 const { run } = require('./message.js');
 run();
 const messages = require('./message.js').messages;
-const e = require('./log/test.txt');
 
 module.exports.run = () => {
+	async function checkFolder() {
+		// checks if log folder exists, if not creates it
+		const logFolder = path.join(__dirname, '..', 'log');
+
+		fs.stat(logFolder, (err, stats) => {
+		if (err) {
+			if (err.code === 'ENOENT') {
+			fs.mkdir(logFolder, (mkdirErr) => {
+				if (mkdirErr) {
+				console.error(`Error creating log folder: ${mkdirErr.message}`);
+				} else {
+				console.log(`Log folder created at ${logFolder}`);
+				}
+			})
+			} else {
+			console.error(`Error checking for log folder: ${err.message}`);
+			}
+			} else if (stats.isDirectory()) {
+			console.log(`Log folder already exists at ${logFolder}`);
+			} else {
+				console.error(`File exists with same name as log folder: ${logFolder}`);
+			}
+		})
+	}
+
 	async function createLog() {
 		
 		const now = new Date();
@@ -35,5 +60,6 @@ module.exports.run = () => {
 			}
 		  });
 	}	
-	createLog();
+	
+	checkFolder().then(setTimeout(createLog, 5000));
 }
