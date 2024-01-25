@@ -38,12 +38,12 @@ There is no need to install any other dependencies. The code is ready to run. Yo
 ## Creating webhooks and getting the URL
 
 ### <br>You can create webhooks[<sup>4</sup>](#footnote4) directly through the Discord client. Go to Server Settings, and you will see an `Integrations` tab.
-![fig1](https://discordjs.guide/assets/creating-webhooks-1.9d51faa6.png)<br>
+![fig1](https://discordjs.guide/assets/creating-webhooks-1.afb4d719.png)<br>
 ### If you already have created a webhook, the webhooks tab will look like this; you will need to click the `View Webhooks` button.<br>
-![fig2](https://discordjs.guide/assets/creating-webhooks-2.24d92370.png)<br>
+![fig2](https://discordjs.guide/assets/creating-webhooks-2.314cbc83.png)<br>
 
 ### To create a new webhook, navigate to the desired channel and click the `Create Webhook` or `New Webhook` button. This will open a new window where you can customize the channel, name, and avatar of the webhook. Once you have made your desired changes, copy the provided link, which consists of both the webhook's unique ID and token.
-![fig3](https://discordjs.guide/assets/creating-webhooks-3.1fddb27b.png)
+![fig3](https://discordjs.guide/assets/creating-webhooks-3.c87a9b54.png)
 
 Paste the URL[<sup>2</sup>](#footnote2) in the `config.json` file in the repository.<br>
 
@@ -146,5 +146,5 @@ After each run, the code will log the status of each webhook in the `log.txt` fi
 ---
 
 # <br> Info
-## If you have any questions or have any errors, feel free to DM me on Discord: `H4CK3RGoneWild#4287`. Or put a new issuse in the repository. I will try to get back to you as soon as possible. <br>
+## If you have any questions or have any errors, feel free to DM me on Discord: `h4ck3rgonewild`. Or put a new issuse in the repository. I will try to get back to you as soon as possible. <br>
 # Made with much ❤️. <br>
