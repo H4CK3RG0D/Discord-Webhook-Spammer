@@ -8,6 +8,7 @@ This is a simple Discord.js webhook spammer. It can be used to spam any channel 
 - [Running the code](#Running-the-code)
 - [Creating webhooks and getting the URL](#Creating-webhooks-and-getting-the-URL)
 - [Customization](#Customization)
+- [Message Logs](#Message-Logs)
 - [Errors and Warnings](#Errors-and-Warnings)
 - [Footnotes](#Footnotes)
 - [Info](#Info)
@@ -121,7 +122,7 @@ Paste the URL[<sup>2</sup>](#footnote2) in the `config.json` file in the reposit
 ```
 ### For this instance, the code will send 100 messages. You can change the number to whatever you want. The number is the amount of messages sent.
 
-# <br>Logging each webhook's status
+# <br> Message Logs
 After each run, the code will log the status of each webhook in the `log.txt` file. The log file will be created (in a form of json) in the `log` folder located in the root directory. The log includes the following information:
 - The webhook's URLs
 - The webhook's message
