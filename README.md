@@ -22,7 +22,7 @@ This is a simple Discord.js webhook spammer. It can be used to spam any channel 
 ### <br>To install node.js, go to https://nodejs.org/en/download/ and download the latest version.<br>
 
 ### <br>To install discord.js, run the following command in your terminal in the directory of the repository:
-### This will install the latest version of discord.js. And make sure you have node.js installed first.
+### This will install the `v14.7` of discord.js. And make sure you have node.js installed first.
 ```cmd
 $ npm install
 ```
