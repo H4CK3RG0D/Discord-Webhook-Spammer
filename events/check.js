@@ -1,5 +1,4 @@
 const config = require('../config.json');
-const fetch = require('node-fetch');
 
 module.exports.info = {
 	"name":"check"
